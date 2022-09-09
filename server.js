@@ -205,4 +205,27 @@ function addEmployee(){
     });
 }
 
+//Update function set
+function updateEmployee(){
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "id",
+        message: "Enter employee id:"
+      },
+      {
+        type: "input",
+        name: "role_id",
+        message: "Enter new role id:"
+      }
+    ]).then(function(res){
+      connection.query("UPDATE employee SET ? WHERE ?", [{role_id: res.role_id}, {id: res.id}], function(err, res){
+        if(err) throw err;
+        console.log("Employee updated!");
+        start();
+      });
+    });
+}
+
 
