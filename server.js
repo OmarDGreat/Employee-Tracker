@@ -102,3 +102,107 @@ function viewEmployees(){
   });
 }
 
+//Add function set
+function add(){
+  inquirer
+    .prompt([
+      {
+      type: "list",
+      name: "add",
+      message: "Select one to add:",
+      choices: ["Department", "Role", "Employee"]
+      }
+    ]).then(function(res){
+      switch(res.add){
+        case "Department":
+          addDepartment();
+          break;
+        case "Role":
+          addRole();
+          break;
+        case "Employee":
+          addEmployee();
+          break;
+        default:
+          console.log("default");
+      }
+    });
+}
+
+function addDepartment(){
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "department",
+        message: "Enter department name:"
+      }
+    ]).then(function(res){
+      connection.query("INSERT INTO department SET ?", {name: res.department}, function(err, res){
+        if(err) throw err;
+        console.log("Department added!");
+        start();
+      });
+    });
+}
+
+function addRole(){
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "title",
+        message: "Enter role title:"
+      },
+      {
+        type: "input",
+        name: "salary",
+        message: "Enter role salary:"
+      },
+      {
+        type: "input",
+        name: "department_id",
+        message: "Enter department id:"
+      }
+    ]).then(function(res){
+      connection.query("INSERT INTO role SET ?", {title: res.title, salary: res.salary, department_id: res.department_id}, function(err, res){
+        if(err) throw err;
+        console.log("Role added!");
+        start();
+      });
+    });
+}
+
+function addEmployee(){
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "first_name",
+        message: "Enter employee first name:"
+      },
+      {
+        type: "input",
+        name: "last_name",
+        message: "Enter employee last name:"
+      },
+      {
+        type: "input",
+        name: "role_id",
+        message: "Enter role id:"
+      },
+      {
+        type: "input",
+        name: "manager_id",
+        message: "Enter manager id:"
+      }
+    ]).then(function(res){
+      connection.query("INSERT INTO employee SET ?", {first_name: res.first_name, last_name: res.last_name, role_id: res.role_id, manager_id: res.manager_id}, function(err, res){
+        if(err) throw err;
+        console.log("Employee added!");
+        start();
+      });
+    });
+}
+
+
