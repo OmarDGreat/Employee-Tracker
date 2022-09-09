@@ -13,7 +13,6 @@ https://watch.screencastify.com/v/fCHWe7Si3ifkX3j5JYJa
 
 ![image](https://user-images.githubusercontent.com/89590731/189401641-45e5740c-eef8-420d-a098-721c38928454.png)
 
-# Additional Credits to 
-
-https://www.youtube.com/watch?v=71lXxXHDkTs&ab_channel=VanessaRodrigues - Vanessa Rodrigues
-https://www.youtube.com/watch?v=bH54ptU0zB8&ab_channel=RodrigoValencia - Rodrigo Valencia
+## Additional Credits to 
+* https://www.youtube.com/watch?v=71lXxXHDkTs&ab_channel=VanessaRodrigues - Vanessa Rodrigues
+* https://www.youtube.com/watch?v=bH54ptU0zB8&ab_channel=RodrigoValencia - Rodrigo Valencia
